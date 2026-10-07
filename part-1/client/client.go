@@ -15,7 +15,7 @@ func read(conn *net.Conn) {
 
 func main() {
 	stdin := bufio.NewReader(os.Stdin)
-	conn, _ := net.Dial("tcp", "127.0.0.1:8030")
+	conn, _ := net.Dial("tcp", "172.31.43.142:8030")
 	for {
 		fmt.Println("Enter text:")
 		text, _ := stdin.ReadString('\n')
