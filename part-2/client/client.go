@@ -37,7 +37,11 @@ func main() {
 	flag.Parse()
 
 	//TODO Try to connect to the server
-	conn, _ := net.Dial("tcp", *addrPtr)
+	conn, err := net.Dial("tcp", *addrPtr)
+
+	if err != nil {
+		fmt.Println(err)
+	}
 
 	go read(&conn)
 	write(&conn)
